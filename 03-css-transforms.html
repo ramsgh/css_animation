@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03: CSS Transforms</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #0f172a;
+      color: white;
+      padding: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #1e293b;
+      height: 120px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border: 2px solid #38bdf8;
+      transition: transform 0.3s ease;
+    }
+
+    /* 1. Translate (Move X/Y) */
+    .card-translate:hover {
+      transform: translateY(-15px);
+    }
+
+    /* 2. Rotate (Degrees) */
+    .card-rotate:hover {
+      transform: rotate(90deg);
+    }
+
+    /* 3. Scale (Enlarge/Shrink) */
+    .card-scale:hover {
+      transform: scale(1.15);
+    }
+
+    /* 4. Skew (Distort angles) */
+    .card-skew:hover {
+      transform: skewX(-12deg);
+    }
+
+    /* 5. Combined Transforms */
+    .card-combined:hover {
+      transform: translateY(-10px) rotate(-5deg) scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS 2D Transforms (Hover over boxes)</h2>
+
+  <div class="grid">
+    <div class="card card-translate">Translate Y (-15px)</div>
+    <div class="card card-rotate">Rotate (15deg)</div>
+    <div class="card card-scale">Scale (1.15)</div>
+    <div class="card card-skew">Skew X (-12deg)</div>
+    <div class="card card-combined">Combined All</div>
+  </div>
+</body>
+</html>

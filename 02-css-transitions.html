@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02: CSS Transitions</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f1f5f9;
+      padding: 2rem;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 500px;
+    }
+
+    .btn {
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #3b82f6;
+      
+      /* Individual Transition Properties */
+      transition-property: background-color, transform, box-shadow;
+      transition-duration: 0.4s;
+      transition-timing-function: ease-in-out;
+      transition-delay: 0s;
+    }
+
+    .btn:hover {
+      background-color: #d81d23;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Transition Timing Function Comparison */
+    .box {
+      width: 100px;
+      height: 40px;
+      background: #8b5cf6;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      font-size: 0.85rem;
+
+      /* Shorthand: transition: property duration timing-function delay */
+      transition: margin-left 1s ease 0s;
+    }
+
+    .box-linear {  background: #f65c6b; }
+     .box-ease {  background: #5ce9f6; }
+
+    .container:hover .linear { margin-left: 300px; transition-timing-function: linear; }
+    .container:hover .ease { margin-left: 300px; transition-timing-function: ease; }
+    .container:hover .ease-in-out { margin-left: 300px; transition-timing-function: ease-in-out; }
+    .container:hover .cubic { margin-left: 300px; transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+  </style>
+</head>
+<body>
+  <h2>CSS Transitions (Hover over container below)</h2>
+
+  <button class="btn">Hover Me (Transition Background & Shadow)</button>
+
+  <div class="container" style="margin-top:2rem;">
+    <div class="box box-linear linear">linear</div>
+    <div class="box box-ease ease">ease</div>
+    <div class="box ease-in-out">ease-in-out</div>
+    <div class="box cubic">bounce (cubic-bezier)</div>
+  </div>
+</body>
+</html>

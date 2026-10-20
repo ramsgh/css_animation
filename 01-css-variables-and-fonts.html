@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01: CSS Variables, Google Fonts & Font Awesome</title>
+  
+  <!-- 1. Google Fonts Import (Poppins & Roboto) -->
+   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- 2. Font Awesome Icon Library CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* 3. CSS Variables (Custom Properties) declared in :root */
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #7c3aed;
+      --accent-color: #f59e0b;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Roboto', sans-serif;
+      --border-radius: 12px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      padding: 2rem;
+      margin: 0;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      color: var(--primary-color);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      padding: 1.5rem;
+      max-width: 400px;
+      border-left: 5px solid var(--secondary-color);
+    }
+
+    /* 4. Using Font Awesome Icons */
+    .icon-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .icon-list li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .fa-star { color: var(--accent-color); }
+    .fa-code { color: var(--primary-color); }
+    .fa-heart { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <h1>CSS Variables & Icon Libraries</h1>
+
+  <div class="card">
+    <h2><i class="fa-solid fa-layer-group"></i> Theme Card</h2>
+    <p>This card uses CSS custom variables for colors, fonts, shadows, and border radii.</p>
+
+    <ul class="icon-list">
+      <li><i class="fa-solid fa-star"></i> Featured Skill</li>
+      <li><i class="fa-solid fa-code"></i> Clean Code</li>
+      <li><i class="fa-solid fa-heart"></i> Built with Care</li>
+    </ul>
+  </div>
+</body>
+</html>

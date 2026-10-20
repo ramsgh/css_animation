@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05: Combined Interactive Component</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #10b981;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .profile-card {
+      background: var(--surface);
+      width: 320px;
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.08);
+      
+      /* Transition for card hover */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -10px rgba(99, 102, 241, 0.3);
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 1rem;
+    }
+
+    .avatar-icon {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: white;
+      transition: transform 0.4s ease;
+    }
+
+    .profile-card:hover .avatar-icon {
+      transform: rotate(360deg) scale(1.05);
+    }
+
+    .status-dot {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--surface);
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+
+    h3 {
+      margin: 0.5rem 0 0.2rem;
+      font-size: 1.25rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <div class="avatar-wrapper">
+      <div class="avatar-icon">
+        <i class="fa-solid fa-user-astronaut"></i>
+      </div>
+      <div class="status-dot"></div>
+    </div>
+
+    <h3>Alex Rivera</h3>
+    <p><i class="fa-solid fa-code"></i> Full Stack Developer</p>
+
+    <button class="btn">
+      <i class="fa-solid fa-paper-plane"></i> Connect
+    </button>
+  </div>
+
+</body>
+</html>
